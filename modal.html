@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <div id="wrapper">
+    <h1>Modal</h1>
+<!--.preventでボタンをクリックしたときのデフォルトの挙動を停止。.stopで親要素へのイベントの伝搬を停止-->
+    <button id="modal-open-btn"
+    @click.prevent.stop="openModal">
+      モーダルを開く
+    </button>
+    <!--fadeアニメーションを追加する-->
+    <transition name="fade">
+<!--isOpenModalがtrueならmodal-overlayを表示-->
+    <div v-if="isOpenModal" 
+    class="modal-overlay">
+      <div id="modal">
+        <button id="modal-close-btn"
+        @click.prevent.stop="closeModal">
+         ✕
+        </button>
+        <div id="modal-content">
+          <p>モーダルのコンテンツです</p>
+        </div>
+      </div>
+    </div>
+    </transition>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="modal.js"></script>
+</body>
+</html>

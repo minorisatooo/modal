@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:400|Roboto:400,700&display=swap");
+
+body {
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  background: white;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+#wrapper {
+  padding: 30px 0;
+  margin: 30px 30px;
+  border-top: 7px solid #E6E6E6;
+  border-bottom: 7px solid #E6E6E6;
+}
+
+#wrapper h1 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+}
+
+#modal-open-btn {
+  width: 200px;
+  margin: 30px 0 0 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#modal {
+  position: relative;
+  width: 50%;
+  background: white;
+}
+
+#modal-close-btn {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+#modal #modal-content {
+  min-height: 150px;
+  padding: 40px 30px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 0 30px;
+  }
+
+  #wrapper {
+    max-width: 900px;
+    min-height: 200px;
+    margin: 60px auto;
+    padding: 30px 0;
+  }
+
+  #wrapper h1 {
+    font-size: 40px;
+  }
+
+  #modal-open-btn {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    margin: 50px auto 0;
+    line-height: 30px;
+    padding: 0;
+    border: none;
+    background: #1AAED3;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+/* -enter-active:子要素の表示開始からアニメーション終了時まで設定。 -leave-active:子要素の非表示開始からアニメーション終了時まで設定。*/
+.fade-enter-active, .fade-leave-active {
+  /** opacityを0.3秒かけてアニメーションさせる **/
+  transition: opacity .3s;
+}
+
+/* -enter:子要素の開始時に１フレームだけ設定。-leave-to:子要素の非表示アニメーション完了まで設定。 */
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
